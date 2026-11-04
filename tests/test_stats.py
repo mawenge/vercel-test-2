@@ -7,6 +7,24 @@ class WordCountTests(unittest.TestCase):
     def test_counts_words_separated_by_single_spaces(self):
         self.assertEqual(word_count("one two three"), 3)
 
+    def test_collapses_repeated_spaces(self):
+        self.assertEqual(word_count("hello  world"), 2)
+
+    def test_ignores_leading_whitespace(self):
+        self.assertEqual(word_count(" hi"), 1)
+
+    def test_ignores_trailing_whitespace(self):
+        self.assertEqual(word_count("hi "), 1)
+
+    def test_empty_text_has_no_words(self):
+        self.assertEqual(word_count(""), 0)
+
+    def test_all_whitespace_text_has_no_words(self):
+        self.assertEqual(word_count(" \t\n "), 0)
+
+    def test_counts_words_separated_by_tabs_and_newlines(self):
+        self.assertEqual(word_count("one\ttwo\nthree"), 3)
+
 
 class MostCommonTests(unittest.TestCase):
     def test_orders_by_frequency(self):
