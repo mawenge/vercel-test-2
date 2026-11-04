@@ -6,7 +6,7 @@ def word_count(text: str) -> int:
 
     Words are separated by whitespace.
     """
-    return len(text.split(" "))
+    return len(text.split())
 
 
 def most_common(words: list[str], n: int = 3) -> list[tuple[str, int]]:
