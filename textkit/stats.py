@@ -9,6 +9,18 @@ def word_count(text: str) -> int:
     return len(text.split(" "))
 
 
+def char_count(text: str, include_spaces: bool = True) -> int:
+    """Return the number of characters in ``text``.
+
+    When ``include_spaces`` is False, whitespace characters (spaces, tabs,
+    newlines, and anything else for which ``str.isspace()`` is true) are not
+    counted.
+    """
+    if include_spaces:
+        return len(text)
+    return sum(1 for ch in text if not ch.isspace())
+
+
 def most_common(words: list[str], n: int = 3) -> list[tuple[str, int]]:
     """Return the ``n`` most frequent words with their counts.
 
