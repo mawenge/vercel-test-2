@@ -21,3 +21,12 @@ def most_common(words: list[str], n: int = 3) -> list[tuple[str, int]]:
 def reading_time_minutes(text: str, words_per_minute: int = 200) -> int:
     """Estimate the reading time of ``text`` in whole minutes."""
     return word_count(text) // words_per_minute
+
+
+def line_count(text: str) -> int:
+    """Return the number of lines in ``text``.
+
+    Lines are split as by ``str.splitlines``: an empty string has no lines and
+    a trailing newline does not start an extra line.
+    """
+    return len(text.splitlines())
