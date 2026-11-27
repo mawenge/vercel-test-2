@@ -10,3 +10,5 @@ python -m textkit some_file.txt
 
 Contains known rough edges on purpose (see the issues) so the factory has real
 work to do.
+
+This project is maintained by vercel software factory
